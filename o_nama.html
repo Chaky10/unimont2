@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIMONT</title>
+    <link rel="icon" type="image/x-icon" href="slike/unimont logo.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <header class="zaglavlje">
+    <div class="logo">
+        <img src="slike/unimont_crveni2.jpg" alt="logo">
+    </div>
+    <nav id="navbar">
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Početna</a>
+            <a href="usluge.html">Usluge</a>
+            
+            <a href="kontakt.html" class="active">Kontakt</a>
+        </div>
+        <div class="burger" id="burger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+</header>
+
+    <main>
+
+        <section class="o_nama">
+        <h1>O nama:</h1>
+            <P>Unimont d.o.o. je tvrtka koje se nalazi nedaleko grada Bjelovara, u selu smještenom na prekrasnim brdima Bilogore, točnije selo Višnjevac. <br>
+                Tvrtka je osnovana 2022. godine te za sobom ima veliki broj uspješno odrađenih projekata diljem cijele Republike Hrvatske. <br>
+                Fokusirani smo na izradu čeličnih konstrukcija no naša tvrtka također nudi: 
+                <ul class="djelatnosti">
+                <li>obavljenje zemljanih radova (nasipavanje, strojni iskopi i sl.)</li>
+                <li>dobava i montaža sendvič panela i limenih pokrova</li>
+                 <li>izrada projektne dokumentacije i statičkih proračuna</li>
+                 <li>izrada sušara za žito na sječku (troprolazne)</li>
+                <li>transporteri 
+                </ul>
+                <br>
+            Tvrtka se bavi proizvodnjom čeličnih konstrukcija već dugi niz godina te za sobom ima preko 200 izrađenih čeličnih konstrukcija, štala, nadstrešnica za poljoprivredne strojeve,
+            podna skladišta... <br> 
+            Izrada konstrukcija se izvodi od IPE, HEA i cijevnih profila te je cijela montaža isključivo na vijke.
+            Dugogodišnjim poslovanjem i kvalitetnim radom osigurali smo svoje mjesto na  tržištu te radili na području cijele Lijepe Naše. <br>
+            Nadamo se da će te nam dati priliku da i Vama dokažemo da maleno poduzeće itetkako može dati sjajne rezultate.
+            </P>
+        </section>
+
+        <section class="karta">
+            <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2772.995259287626!2d16.918305575829965!3d45.97135419945854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476633bf173396c1%3A0xc4db408980030c9c!2zVmnFoW5qZXZhYyA0OCwgNDMyMjYsIFZpxaFuamV2YWM!5e0!3m2!1shr!2shr!4v1723576918009!5m2!1shr!2shr" 
+        width="400" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        </section>
+    </main>
+
+   <footer class="podnozje">
+        <div class="kontakt">
+            <h4>Kontakt:</h4>
+            <p>Višnjevac 48</p>
+            <p>43226 Veliko Trojstvo</p>
+            <p><a href="mailto:unimont.m@gmail.com">unimont.m@gmail.com</a></p>
+        </div>
+        <hr>
+        <div class="facebook">
+            <a href="https://www.facebook.com/mario.ekostar?locale=hr_HR"><img src="slike/facebook.svg" alt="facebook"></a>
+        </div>
+    </footer>
+
+    <script>
+        const burger = document.getElementById('burger');
+        const nav = document.getElementById('navLinks');
+
+        burger.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
