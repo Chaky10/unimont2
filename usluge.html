@@ -32,7 +32,9 @@
   <div class="galerija-container">
      <div class="slika-blok">
         <p>Nadstrešnica za domaće životinje:</p>
+        <a href="#lightbox1">
     <img src="slike/slika1.jpg" alt="Slika 1">
+        </a>
     </div>
     <div class="slika-blok">
         <p>Jednostrešna čelična konstrukcija:</p>
@@ -66,10 +68,30 @@
         <p>Montaža:</p>
     <img src="slike/slika9.jpg" alt="Slika 9">
     </div>
+    <div class="slika-blok">
+        <p>Usluge univerzalnom probijačicom:</p>
+    <img src="slike/slika10.jpeg" alt="Slika 10">
+    </div>
+    <div class="slika-blok">
+        <p>Usluge apkant prešom:</p>
+    <img src="slike/slika11.jpeg" alt="Slika 11">
+    </div>
+    <div class="slika-blok">
+        <p>Usluge CNC plazmom:</p>
+    <img src="slike/slika12.jpeg" alt="Slika 12">
+    </div>
   </div>
 </section>
 
-    </main>
+<!-- Lightbox element -->
+<div class="lightbox" id="lightbox">
+  <span class="close" onclick="closeLightbox()">×</span>
+  <span class="prev" onclick="changeImage(-1)">❮</span>
+  <img id="lightbox-img" src="" alt="Povećana slika">
+  <span class="next" onclick="changeImage(1)">❯</span>
+</div>
+
+
 
  <section class="karta">
         <iframe 
@@ -97,6 +119,42 @@
 
   burger.addEventListener('click', () => {
     nav.classList.toggle('active');
+  });
+
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const slike = document.querySelectorAll(".slika-blok img");
+  let currentIndex = 0;
+
+  slike.forEach((slika, index) => {
+    slika.addEventListener("click", () => {
+      currentIndex = index;
+      showImage(currentIndex);
+    });
+  });
+
+  function showImage(index) {
+    lightboxImg.src = slike[index].src;
+    lightbox.classList.add("active");
+  }
+
+  function changeImage(direction) {
+    currentIndex += direction;
+    if (currentIndex < 0) currentIndex = slike.length - 1;
+    if (currentIndex >= slike.length) currentIndex = 0;
+    showImage(currentIndex);
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("active");
+    lightboxImg.src = "";
+  }
+
+  // Zatvori ako se klikne izvan slike
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox || e.target.classList.contains("close")) {
+      closeLightbox();
+    }
   });
 </script>
 </body>
